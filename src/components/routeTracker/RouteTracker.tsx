@@ -19,7 +19,7 @@ const RouteTracker = (props: RouteTrackerProps) => {
     const routeTitle = (routeNumber ? `${routeNumber} - ` : '') + routeName;
     let times
     if(arrivals.length > 0){
-       times = arrivals.map((t) => TimeChip({...t, key: t.id})) 
+       times = arrivals.map((t) => TimeChip({...t})) 
     } else {
         times = (
             <Card>
