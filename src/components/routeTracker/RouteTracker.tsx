@@ -4,14 +4,15 @@ import { TimeChip, type TimeChipProps } from "../timeChip";
 import Stack from "@mui/material/Stack";
 
 interface RouteTrackerProps extends PropsWithChildren {
+    id: string
     routeName: string
     routeNumber?: string
     direction: string
-    times: TimeChipProps[]
+    arrivals: TimeChipProps[]
 }
 
 const RouteTracker = (props: RouteTrackerProps) => {
-    const {routeName, routeNumber, direction, times} = props
+    const {routeName, routeNumber, direction, arrivals} = props
 
     const routeTitle = (routeNumber ? `${routeNumber} - ` : '') + routeName;
 
@@ -22,7 +23,7 @@ const RouteTracker = (props: RouteTrackerProps) => {
                     <Typography variant="h2" align="right">{routeTitle}</Typography>
                     <Typography variant="h2" align="right">{direction}</Typography>  
                 </Stack>
-                {times.map( (t: TimeChipProps) => (<TimeChip {...t} />))}
+                {arrivals.map( (t: TimeChipProps) => (<TimeChip {...t} key={t.id} />))}
             </Stack>
         </>
     )
