@@ -19,6 +19,7 @@ const useTransitData = () => {
             }
         }
 
+        getData()
         timerRef.current = setInterval(getData, 60000)
 
         return () => clearInterval(timerRef.current)

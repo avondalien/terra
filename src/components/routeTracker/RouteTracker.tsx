@@ -2,6 +2,8 @@ import Typography from "@mui/material/Typography";
 import type { PropsWithChildren } from "react";
 import { TimeChip, type TimeChipProps } from "../timeChip";
 import Stack from "@mui/material/Stack";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 
 interface RouteTrackerProps extends PropsWithChildren {
     id: string
@@ -15,6 +17,20 @@ const RouteTracker = (props: RouteTrackerProps) => {
     const {routeName, routeNumber, direction, arrivals} = props
 
     const routeTitle = (routeNumber ? `${routeNumber} - ` : '') + routeName;
+    let times
+    if(arrivals.length > 0){
+       times = arrivals.map((t) => TimeChip({...t, key: t.id})) 
+    } else {
+        times = (
+            <Card>
+                <CardContent>
+                    <Typography>
+                        No Scheduled Times
+                    </Typography>
+                </CardContent>
+            </Card>
+        )
+    }
 
     return (
         <>
@@ -23,7 +39,7 @@ const RouteTracker = (props: RouteTrackerProps) => {
                     <Typography variant="h2" align="right">{routeTitle}</Typography>
                     <Typography variant="h2" align="right">{direction}</Typography>  
                 </Stack>
-                {arrivals.map( (t: TimeChipProps) => (<TimeChip {...t} key={t.id} />))}
+                {times}
             </Stack>
         </>
     )
