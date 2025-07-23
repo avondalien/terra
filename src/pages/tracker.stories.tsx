@@ -28,131 +28,122 @@ export const Primary: Story = {
   args: {
     routes: [
         {
+            id: "77Eastbound",
             routeName: "Belmont",
             routeNumber: "77",
             direction: "East",
-            times: [
+            arrivals: [
                 {
-                    isGhost: false,
-                    actualTime: "10:30AM",
-                    scheduledTime: "10:20AM",
+                    id: '888',
+                    expectedTime: "10:30AM",
                     destination: "Diversey/Lakeshore"
                 },
                 {
-                    isGhost: false,
-                    actualTime: "10:30AM",
-                    scheduledTime: "10:20AM",
+                    id: '999',
+                    expectedTime: "10:30AM",
                     destination: "Diversey/Lakeshore"
                 }
             ]
         },
         {
+            id: "77Westbound",
             routeName: "Belmont",
             routeNumber: "77",
             direction: "West",
-            times: [
+            arrivals: [
                 {
-                    isGhost: true,
-                    actualTime: "10:30AM",
-                    scheduledTime: "10:20AM",
+                    id: "111",
+                    expectedTime: "10:30AM",
                     destination: "Cumberland"
                 },
                 {
-                    isGhost: false,
-                    actualTime: "10:30AM",
-                    scheduledTime: "10:20AM",
+                    id: "222",
+                    expectedTime: "10:30AM",
                     destination: "Harlem"
                 }
             ]
         },
         {
+          id: "82Northbound",
           routeName: "Kimball-Homan",
           routeNumber: "82",
           direction: "North",
-          times: [
+          arrivals: [
               {
-                  isGhost: false,
-                  actualTime: "10:30AM",
-                  scheduledTime: "10:20AM",
+                  id: 'asdf',
+                  expectedTime: "10:30AM",
                   destination: "Devon/Kedzie"
               },
               {
-                  isGhost: false,
-                  actualTime: "10:30AM",
-                  scheduledTime: "10:20AM",
+                  id: 'dsf',
+                  expectedTime: "10:30AM",
                   destination: "Lincolnwood Town Center"
               },
               {
-                isGhost: false,
-                actualTime: "10:30AM",
-                scheduledTime: "10:20AM",
+                id: 'hgfd',
+                expectedTime: "10:30AM",
                 destination: "Lincolnwood Town Center"
             },
             {
-              isGhost: false,
-              actualTime: "10:30AM",
-              scheduledTime: "10:20AM",
+              id: 'vsdgf',
+              expectedTime: "10:30AM",
               destination: "Lincolnwood Town Center"
-          }
+            }
           ]
         },
         {
+          id: '82Southbound',
           routeName: "Kimball-Homan",
           routeNumber: "82",
           direction: "South",
-          times: [
+          arrivals: [
               {
-                  isGhost: false,
-                  actualTime: "10:30AM",
-                  scheduledTime: "10:20AM",
+                  id: 'bx',
+                  expectedTime: "10:30AM",
                   destination: "Central Park/Cermak"
               },
               {
-                  isGhost: false,
-                  actualTime: "10:30AM",
-                  scheduledTime: "10:20AM",
+                  id: 'thyaef',
+                  expectedTime: "10:30AM",
                   destination: "31st/Central Park"
               }
           ]
         },
         {
+          id: "Blue5",
           routeName: "Blue Line",
           direction: "Forest Park",
-          times: [
+          arrivals: [
               {
-                  isGhost: false,
-                  actualTime: "10:30AM",
-                  scheduledTime: "10:20AM",
+                  id: '768543',
+                  expectedTime: "10:30AM",
                   destination: "UIC-Halsted"
               },
               {
-                  isGhost: false,
-                  actualTime: "10:30AM",
-                  scheduledTime: "10:20AM",
+                  id: '9876',
+                  expectedTime: "10:30AM",
                   destination: "Forest Park"
               }
           ]
         },
         {
+          id: "Blue1",
           routeName: "Blue Line",
           direction: "O'Hare",
-          times: [
+          arrivals: [
               {
-                  isGhost: false,
-                  actualTime: "10:30AM",
-                  scheduledTime: "10:20AM",
+                  id: '1234',
+                  expectedTime: "10:30AM",
                   destination: "Rosemont"
               },
               {
-                  isGhost: true,
-                  actualTime: "10:30AM",
-                  scheduledTime: "10:20AM",
+                  id: 'vfrerev',
+                  expectedTime: "10:30AM",
                   destination: "Rosemont"
               },
               {
-                  isGhost: false,
-                  actualTime: "10:30AM",
-                  scheduledTime: "10:20AM",
+                  id: '54gs',
+                  expectedTime: "10:30AM",
                   destination: "O'Hare"
               }
           ]
@@ -161,22 +152,3 @@ export const Primary: Story = {
   },
 };
 
-export const Secondary: Story = {
-  args: {
-    label: 'Button',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
-    label: 'Button',
-  },
-};
