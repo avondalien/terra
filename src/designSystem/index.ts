@@ -7,6 +7,7 @@ const CHARTER = 'charter'
 const TERRA = 'terra'
 
 const TEXT_COLOR = "#2f2722"
+const WHITE = "#e8e8e8"
 
 const terraTheme = createTheme({
     palette: {
@@ -35,7 +36,7 @@ const terraTheme = createTheme({
             color: TEXT_COLOR
         },
         body1: {
-            color: TEXT_COLOR,
+            color: WHITE,
             fontSize: '24pt'
         },
         body2: {
@@ -47,7 +48,7 @@ const terraTheme = createTheme({
         MuiCard: {
             styleOverrides: {
                 root: {
-                    background: '#A66424'
+                    background: '#904029'
                 }
             }
         }
