@@ -48,7 +48,11 @@ const Tracker = ({routes}: TrackerProps) => {
 
     return (
         <>
-            <Stack spacing={2}>
+            <Stack 
+                spacing={2} 
+                justifyContent="space-between"
+                sx={{height: '95vh', maxHeight: '95vh'}}
+            >
                 <Typography 
                     variant="h1" 
                     align="center"

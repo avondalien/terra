@@ -34,7 +34,7 @@ const RouteTracker = (props: RouteTrackerProps) => {
 
     return (
         <>
-            <Stack direction="row" spacing={2} alignItems="stretch" >
+            <Stack direction="row" spacing={4} alignItems="stretch" >
                 <Stack sx={{width: '18%'}} alignSelf="center">
                     <Typography variant="h2" align="right">{routeTitle}</Typography>
                     <Typography variant="h2" align="right">{direction}</Typography>  

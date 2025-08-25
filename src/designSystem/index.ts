@@ -26,31 +26,32 @@ const terraTheme = createTheme({
             ].join(','),
         h1: {
             fontFamily: TERRA,
-            fontSize: '100pt',
+            fontSize: '10pc',
             fontWeight: 'bold',
             color: TEXT_COLOR
         },
         h2: {
-            fontSize: '24pt',
+            fontSize: '2.7pc',
             fontWeight: 'bold',
             color: TEXT_COLOR
         },
         body1: {
             color: WHITE,
-            fontSize: '24pt'
+            fontSize: '2.7pc'
         },
         body2: {
             color: TEXT_COLOR,
-            fontSize: '18pt'
+            fontSize: '2pc'
         }
     },
     components: {
         MuiCard: {
             styleOverrides: {
                 root: {
-                    background: '#904029'
+                    background: '#904029',
+                    borderRadius: '2.5pc'
                 }
-            }
+            },
         }
     },
 })
