@@ -2,6 +2,26 @@ import { createTheme } from '@mui/material/styles'
 import "../index.css"
 import "../assets/fonts/charter/charter_regular-webfont.woff"
 import "../assets/fonts/terra/TerraFontNewVer-Regular.ttf"
+import type React from 'react';
+
+declare module '@mui/material/styles' {
+    interface TypographyVariants {
+        minutes: React.CSSProperties;
+        destination: React.CSSProperties;
+    }
+
+    interface TypographyVariantsOptions {
+        minutes?: React.CSSProperties
+        destination?: React.CSSProperties
+    }
+}
+
+declare module '@mui/material/Typography' {
+    interface TypographyPropsVariantOverrides {
+        minutes: true
+        destination: true
+    }
+}
 
 const CHARTER = 'charter'
 const TERRA = 'terra'
@@ -31,17 +51,25 @@ const terraTheme = createTheme({
             color: TEXT_COLOR
         },
         h2: {
-            fontSize: '2.7pc',
+            fontSize: '3.2pc',
             fontWeight: 'bold',
             color: TEXT_COLOR
         },
+        minutes: {
+            color: WHITE,
+            fontSize: '4pc'
+        },
+        destination: {
+            color: WHITE,
+            fontSize: '2pc'
+        },
         body1: {
             color: WHITE,
-            fontSize: '2.7pc'
+            fontSize: '4pc'
         },
         body2: {
             color: TEXT_COLOR,
-            fontSize: '2pc'
+            fontSize: '2.5pc'
         }
     },
     components: {
