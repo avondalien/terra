@@ -7,6 +7,7 @@ const CHARTER = 'charter'
 const TERRA = 'terra'
 
 const TEXT_COLOR = "#2f2722"
+const WHITE = "#e8e8e8"
 
 const terraTheme = createTheme({
     palette: {
@@ -25,31 +26,32 @@ const terraTheme = createTheme({
             ].join(','),
         h1: {
             fontFamily: TERRA,
-            fontSize: '100pt',
+            fontSize: '10pc',
             fontWeight: 'bold',
             color: TEXT_COLOR
         },
         h2: {
-            fontSize: '24pt',
+            fontSize: '2.7pc',
             fontWeight: 'bold',
             color: TEXT_COLOR
         },
         body1: {
-            color: TEXT_COLOR,
-            fontSize: '24pt'
+            color: WHITE,
+            fontSize: '2.7pc'
         },
         body2: {
             color: TEXT_COLOR,
-            fontSize: '18pt'
+            fontSize: '2pc'
         }
     },
     components: {
         MuiCard: {
             styleOverrides: {
                 root: {
-                    background: '#A66424'
+                    background: '#904029',
+                    borderRadius: '2.5pc'
                 }
-            }
+            },
         }
     },
 })

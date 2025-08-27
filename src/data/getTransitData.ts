@@ -1,7 +1,7 @@
 import type { RouteInfo } from "./RouteInfo";
 
 
-const HOSTNAME = "http://localhost:8787"
+const HOSTNAME = "https://transit.avondalien.com"
 const PATHNAME = "/api/v1/locations/terra"
 const API_KEY = "abc123"
 
