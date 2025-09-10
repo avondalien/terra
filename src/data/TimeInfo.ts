@@ -1,7 +1,7 @@
 interface TimeInfo {
     id: string
     actualTime?: string
-    scheduledTime: string
+    expectedTime: string
     destination: string
     isGhost: boolean
 }

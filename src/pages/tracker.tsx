@@ -1,20 +1,29 @@
 import Stack from "@mui/material/Stack"
 import Typography from "@mui/material/Typography"
-import { RouteTracker, type RouteTrackerProps } from "../components/routeTracker/RouteTracker"
+import { RouteTracker } from "../components/routeTracker/RouteTracker"
 import { useTime } from "../time"
 import elImg from "../assets/img/el.svg"
 import busImg from "../assets/img/bus.svg"
 import terra from "../assets/img/logo_black.png"
+import type { TimeInfo } from "../data/TimeInfo"
 
 interface TrackerProps {
-    routes: RouteTrackerProps[]
+    routes: Route[]
+}
+
+interface Route {
+    id: string
+    routeName: string
+    routeNumber?: string
+    direction: string
+    vehicleType: 'EL' | 'BUS'
+    arrivals: TimeInfo[]
 }
 
 const BLUE_LINE_BLUE = '#00a1de'
 const BELMONT_PURPLE = '#993366'
 const KIMBALL_MUSTARD = '#666600'
 const TERRA_COTTA = '#A66424'
-// const TERRA_COTTA = '#904029'
 const TERRA_FILTER = 'invert(39%) sepia(17%) saturate(3272%) hue-rotate(355deg) brightness(97%) contrast(74%)'
 
 const EL_STOPS = [
@@ -68,7 +77,6 @@ const BUS_STOPS = [
         backgroundColor: KIMBALL_MUSTARD,
     }
 ]
-
 
 const Tracker = ({routes}: TrackerProps) => {
     const {currentTime} = useTime()

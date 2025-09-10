@@ -27,8 +27,6 @@ declare module '@mui/material/Typography' {
 // const CHARTER = 'charter'
 const TERRA = 'terra'
 const CHARTER = 'helvetica'
-
-const TEXT_COLOR = "#2f2722"
 const WHITE = "#e8e8e8"
 
 const terraTheme = createTheme({
