@@ -8,7 +8,7 @@ export interface TimeChipProps extends PropsWithChildren{
     id: string
     expectedTime?: string
     currentTime: string
-    destination: string
+    backgroundColor: string
 }
 
 const getMinutesToArrival = (currentTime: string, expectedTime: string): number => {
@@ -55,16 +55,20 @@ const Countdown = ({minutesToArrival}: CountdownProps): JSX.Element => {
 }
 
 const TimeChip = (props: TimeChipProps) => {
-    const { expectedTime: expectedTime, currentTime, destination } = props
+    const { 
+        expectedTime, 
+        currentTime, 
+        backgroundColor 
+    } = props
     
     const minutesToArrival = getMinutesToArrival(currentTime, expectedTime ?? '00:00')
     
     return (
-        <Card sx={{alignContent: "center"}}>
+        <Card sx={{alignContent: "center", background: backgroundColor}}>
             <CardContent sx={{ padding: 3 }}>
                 <Stack>
                     <Countdown minutesToArrival={minutesToArrival} />
-                    <Typography variant="destination">{destination}</Typography>
+                    <Typography variant="destination">{expectedTime}</Typography>
                 </Stack>
             </CardContent>
         </Card>

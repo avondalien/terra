@@ -3,6 +3,8 @@ import type { PropsWithChildren } from "react";
 import { TimeChip, type TimeChipProps } from "../timeChip";
 import Stack from "@mui/material/Stack";
 import { useTime } from "../../time";
+import CardContent from "@mui/material/CardContent";
+import Card from "@mui/material/Card";
 
 interface RouteTrackerProps extends PropsWithChildren {
     id: string
@@ -10,41 +12,70 @@ interface RouteTrackerProps extends PropsWithChildren {
     routeName: string
     routeNumber?: string
     direction: string
+    backgroundColor: string
     arrivals: TimeChipProps[]
 }
 
 const RouteTracker = (props: RouteTrackerProps) => {
-    const {routeName, routeNumber, direction, arrivals, icon} = props
+    const {
+        routeName, 
+        routeNumber, 
+        direction, 
+        arrivals, 
+        icon,
+        backgroundColor,
+    } = props
     const { currentTime } = useTime()
     const routeTitle = (routeNumber ? `${routeNumber} - ` : '') + routeName;
 
     return (
-        <>
-            <Stack direction="row" spacing={4}>
-                <Stack 
-                    direction="row" 
-                    spacing={2}
-                    sx={{width: '20%'}} 
-                    alignItems="center" 
-                    justifyContent="right"
-                >
-                    <Stack alignSelf="center">
-                        <Typography variant="h2" align="right">{routeTitle}</Typography>
-                        <Typography variant="h2" align="right">{direction}</Typography>  
+        <Stack direction="row" spacing={4}>
+            <Card sx={{background: backgroundColor, width: '20%'}}>
+                <CardContent>        
+                    <Stack 
+                        direction="row" 
+                        spacing={2}
+                        alignItems="center" 
+                        justifyContent="left"
+                    >
+                        <img 
+                            src={icon} 
+                            style={
+                                {
+                                    maxHeight: '100px', 
+                                    maxWidth: '100px',
+                                    filter: 'invert(99%) sepia(2%) saturate(3676%) hue-rotate(249deg) brightness(117%) contrast(82%)'
+                                }
+                            }
+                        />
+                        <Stack 
+                            alignSelf="center" 
+                        >
+                            <Typography 
+                                variant="h2" 
+                            >
+                                {routeTitle}
+                            </Typography>
+                            <Typography 
+                                variant="h2" 
+                            >
+                                {direction}
+                            </Typography>  
+                        </Stack>
                     </Stack>
-                    <img src={icon} style={{maxHeight: '100px', maxWidth: '100px'}}/>
-                </Stack>
-                {arrivals.slice(0, 5).map(t => (
-                    <TimeChip 
-                        id={t.id}
-                        key={t.id} 
-                        currentTime={currentTime} 
-                        expectedTime={t.expectedTime}
-                        destination={t.destination}
-                    />)
-                )}
-            </Stack>
-        </>
+                </CardContent>
+            </Card>
+            {arrivals.slice(0, 5).map(t => (
+                <TimeChip 
+                    id={t.id}
+                    key={t.id} 
+                    currentTime={currentTime} 
+                    expectedTime={t.expectedTime}
+                    backgroundColor={backgroundColor}
+                />)
+            )}
+        </Stack>
+
     )
 }
 

@@ -23,8 +23,10 @@ declare module '@mui/material/Typography' {
     }
 }
 
-const CHARTER = 'charter'
+
+// const CHARTER = 'charter'
 const TERRA = 'terra'
+const CHARTER = 'helvetica'
 
 const TEXT_COLOR = "#2f2722"
 const WHITE = "#e8e8e8"
@@ -41,34 +43,35 @@ const terraTheme = createTheme({
     typography: {
         fontFamily: [
                 CHARTER,
-                'roman',
-                'serif'
+                'sans-serif'
             ].join(','),
         h1: {
             fontFamily: TERRA,
             fontSize: '10pc',
             fontWeight: 'bold',
-            color: TEXT_COLOR
+            color: '#A66424'
         },
         h2: {
             fontSize: '3.2pc',
             fontWeight: 'bold',
-            color: TEXT_COLOR
+            color: WHITE
         },
         minutes: {
             color: WHITE,
+            fontFamily: CHARTER,
             fontSize: '4pc'
         },
         destination: {
             color: WHITE,
-            fontSize: '2pc'
+            fontFamily: CHARTER,
+            fontSize: '2.5pc'
         },
         body1: {
             color: WHITE,
             fontSize: '4pc'
         },
         body2: {
-            color: TEXT_COLOR,
+            color: WHITE,
             fontSize: '2.5pc'
         }
     },
@@ -76,7 +79,6 @@ const terraTheme = createTheme({
         MuiCard: {
             styleOverrides: {
                 root: {
-                    background: '#904029',
                     borderRadius: '2.5pc'
                 }
             },

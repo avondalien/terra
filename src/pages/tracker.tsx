@@ -4,51 +4,68 @@ import { RouteTracker, type RouteTrackerProps } from "../components/routeTracker
 import { useTime } from "../time"
 import elImg from "../assets/img/el.svg"
 import busImg from "../assets/img/bus.svg"
+import terra from "../assets/img/logo_black.png"
 
 interface TrackerProps {
     routes: RouteTrackerProps[]
 }
 
-const STATIONS = [
+const BLUE_LINE_BLUE = '#00a1de'
+const BELMONT_PURPLE = '#993366'
+const KIMBALL_MUSTARD = '#666600'
+const TERRA_COTTA = '#A66424'
+// const TERRA_COTTA = '#904029'
+const TERRA_FILTER = 'invert(39%) sepia(17%) saturate(3272%) hue-rotate(355deg) brightness(97%) contrast(74%)'
+
+const EL_STOPS = [
     {
         id: 'Blue5',
         icon: elImg,
         routeName: 'Blue',
         direction: 'Forest Park',
+        backgroundColor: BLUE_LINE_BLUE,
     },
     {
         id: 'Blue1',
         icon: elImg,
         routeName: 'Blue',
         direction: 'O\'Hare',
+        backgroundColor: BLUE_LINE_BLUE,
     },
+]
+
+const BUS_STOPS = [
     {
         id: '77Eastbound',
         icon: busImg,
         routeName: 'Belmont',
         routeNumber: '77',
-        direction: 'Eastbound',
+        direction: 'East',
+        backgroundColor: BELMONT_PURPLE,
     }, 
     {
         id: '77Westbound',
         icon: busImg,
         routeName: 'Belmont',
         routeNumber: '77',
-        direction: 'Westbound',
+        direction: 'West',
+        backgroundColor: BELMONT_PURPLE,
     },
     {
         id: '82Northbound',
         icon: busImg,
-        routeName: 'Kimball-Homan',
+        routeName: 'Kimball',
         routeNumber: '82',
-        direction: 'Northbound',
+        direction: 'North',
+        backgroundColor: KIMBALL_MUSTARD,
     },
     {
         id: '82Southbound',
         icon: busImg,
-        routeName: 'Kimball-Homan',
+        routeName: 'Kimball',
         routeNumber: '82',
-        direction: 'Southbound',
+        direction: 'South',
+        backgroundColor: KIMBALL_MUSTARD,
     }
 ]
 
@@ -71,30 +88,61 @@ const Tracker = ({routes}: TrackerProps) => {
                 >
                         Nearby Transit Times
                 </Typography>
-                <Stack spacing={4} justifyContent="flex-start">
-                    {
-                        STATIONS.map(s => (
-                            <RouteTracker 
-                                {...s}
-                                arrivals={routes.find(r => r.id === s.id)?.arrivals ?? []}
-                                key={s.id} 
-                            />))
-                    }
-                </Stack>
-                <Stack direction="column" justifyContent="space-evenly">
-                    <Typography
-                        variant="h2"
-                        align="center"
-                    >
-                        {`Time ${hour}:${minute}`}
-                    </Typography>
-                    <Typography
-                        variant="body2"
-                        align="center"
-                    >
-                        Data provided by Chicago Transit Authority
-                    </Typography>
-
+                <Stack paddingLeft={16}>
+                    <Stack spacing={4} justifyContent="flex-start">
+                        {
+                            EL_STOPS.map(s => (
+                                <RouteTracker 
+                                    {...s}
+                                    arrivals={routes.find(r => r.id === s.id)?.arrivals ?? []}
+                                    key={s.id} 
+                                />))
+                        }
+                    </Stack>
+                    <Stack spacing={4} justifyContent="flex-start" paddingTop={8}>
+                        {
+                            BUS_STOPS.map(s => (
+                                <RouteTracker 
+                                    {...s}
+                                    arrivals={routes.find(r => r.id === s.id)?.arrivals ?? []}
+                                    key={s.id} 
+                                />))
+                        }
+                    </Stack>
+                </Stack>?
+                <Stack 
+                    direction="row" 
+                    justifyContent="space-between"
+                    alignItems="center"
+                    paddingLeft={16}
+                    paddingRight={16}
+                >
+                    <Stack>
+                        <Typography
+                            variant="h2"
+                            color={TERRA_COTTA}
+                        >
+                            {`Time ${hour}:${('0' + minute).slice(-2)}`}
+                        </Typography>
+                        <Typography
+                            variant="body2"
+                            color={TERRA_COTTA}
+                        >
+                            Data provided by Chicago Transit Authority
+                        </Typography>
+                    </Stack>
+                    <div style={{width: '33pc'}}>
+                        <img 
+                            src={terra} 
+                            style={
+                                {
+                                    width: "33%", 
+                                    float: "right",
+                                    filter: TERRA_FILTER
+                                }
+                            }
+                        />
+                    </div>
                 </Stack>
             </Stack>
         </>

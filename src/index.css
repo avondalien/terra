@@ -1,12 +1,6 @@
 @media (prefers-color-scheme: light) {
   :root {
-    background-color: #e8e8e8;
-    background-repeat: no-repeat;
-    background-image: url(./assets/img/logo_white.png);
-    background-position: right bottom;
-    background-size: 33%;
-    background-position-x: right 72px;
-    background-position: absolute; 
+    background-color: #2F2722;
   }
 }
 
