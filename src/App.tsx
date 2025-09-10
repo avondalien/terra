@@ -3,6 +3,7 @@ import { terraTheme } from './designSystem'
 import { Tracker } from './pages/tracker'
 import "./index.css"
 import { useTransitData } from './data/useTransitData'
+import { TimeProvider } from './time'
 
 function App() {
 
@@ -11,7 +12,9 @@ function App() {
   return (
     <>
       <ThemeProvider theme={terraTheme}>
-        <Tracker routes={routes}/>
+        <TimeProvider>
+          <Tracker routes={routes}/>
+        </TimeProvider>
       </ThemeProvider>
     </>
   )

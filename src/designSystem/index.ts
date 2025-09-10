@@ -2,9 +2,31 @@ import { createTheme } from '@mui/material/styles'
 import "../index.css"
 import "../assets/fonts/charter/charter_regular-webfont.woff"
 import "../assets/fonts/terra/TerraFontNewVer-Regular.ttf"
+import type React from 'react';
 
-const CHARTER = 'charter'
+declare module '@mui/material/styles' {
+    interface TypographyVariants {
+        minutes: React.CSSProperties;
+        destination: React.CSSProperties;
+    }
+
+    interface TypographyVariantsOptions {
+        minutes?: React.CSSProperties
+        destination?: React.CSSProperties
+    }
+}
+
+declare module '@mui/material/Typography' {
+    interface TypographyPropsVariantOverrides {
+        minutes: true
+        destination: true
+    }
+}
+
+
+// const CHARTER = 'charter'
 const TERRA = 'terra'
+const CHARTER = 'helvetica'
 
 const TEXT_COLOR = "#2f2722"
 const WHITE = "#e8e8e8"
@@ -21,34 +43,42 @@ const terraTheme = createTheme({
     typography: {
         fontFamily: [
                 CHARTER,
-                'roman',
-                'serif'
+                'sans-serif'
             ].join(','),
         h1: {
             fontFamily: TERRA,
             fontSize: '10pc',
             fontWeight: 'bold',
-            color: TEXT_COLOR
+            color: '#A66424'
         },
         h2: {
-            fontSize: '2.7pc',
+            fontSize: '3.2pc',
             fontWeight: 'bold',
-            color: TEXT_COLOR
+            color: WHITE
+        },
+        minutes: {
+            color: WHITE,
+            fontFamily: CHARTER,
+            fontSize: '4pc'
+        },
+        destination: {
+            color: WHITE,
+            fontFamily: CHARTER,
+            fontSize: '2.5pc'
         },
         body1: {
             color: WHITE,
-            fontSize: '2.7pc'
+            fontSize: '4pc'
         },
         body2: {
-            color: TEXT_COLOR,
-            fontSize: '2pc'
+            color: WHITE,
+            fontSize: '2.5pc'
         }
     },
     components: {
         MuiCard: {
             styleOverrides: {
                 root: {
-                    background: '#904029',
                     borderRadius: '2.5pc'
                 }
             },
