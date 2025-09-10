@@ -1,10 +1,11 @@
 import Typography from "@mui/material/Typography";
 import type { PropsWithChildren } from "react";
-import { TimeChip, type TimeChipProps } from "../timeChip";
+import { TimeChip } from "../timeChip";
 import Stack from "@mui/material/Stack";
 import { useTime } from "../../time";
 import CardContent from "@mui/material/CardContent";
 import Card from "@mui/material/Card";
+import type { TimeInfo } from "../../data/TimeInfo";
 
 interface RouteTrackerProps extends PropsWithChildren {
     id: string
@@ -13,7 +14,7 @@ interface RouteTrackerProps extends PropsWithChildren {
     routeNumber?: string
     direction: string
     backgroundColor: string
-    arrivals: TimeChipProps[]
+    arrivals: TimeInfo[]
 }
 
 const RouteTracker = (props: RouteTrackerProps) => {
