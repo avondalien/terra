@@ -117,7 +117,7 @@ const Tracker = ({routes}: TrackerProps) => {
                                 />))
                         }
                     </Stack>
-                </Stack>?
+                </Stack>
                 <Stack
                     direction="row"
                     justifyContent="space-between"
