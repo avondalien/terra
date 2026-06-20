@@ -64,8 +64,8 @@ const TimeChip = (props: TimeChipProps) => {
     const minutesToArrival = getMinutesToArrival(currentTime, expectedTime ?? '00:00')
     
     return (
-        <Card sx={{alignContent: "center", background: backgroundColor}}>
-            <CardContent sx={{ padding: 3 }}>
+        <Card sx={{ background: backgroundColor, display: 'flex', alignItems: 'center' }}>
+            <CardContent sx={{ padding: 1, '&:last-child': { paddingBottom: 1 } }}>
                 <Stack>
                     <Countdown minutesToArrival={minutesToArrival} />
                     <Typography variant="destination">{expectedTime}</Typography>

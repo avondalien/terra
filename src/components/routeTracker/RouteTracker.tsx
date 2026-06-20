@@ -31,20 +31,20 @@ const RouteTracker = (props: RouteTrackerProps) => {
 
     return (
         <Stack direction="row" spacing={4}>
-            <Card sx={{background: backgroundColor, width: '20%'}}>
-                <CardContent>        
-                    <Stack 
-                        direction="row" 
+            <Card sx={{background: backgroundColor, width: '20%', display: 'flex', alignItems: 'center'}}>
+                <CardContent sx={{ padding: '8px', '&:last-child': { paddingBottom: '8px' }, width: '100%' }}>
+                    <Stack
+                        direction="row"
                         spacing={2}
-                        alignItems="center" 
+                        alignItems="center"
                         justifyContent="left"
                     >
                         <img 
                             src={icon} 
                             style={
                                 {
-                                    maxHeight: '100px', 
-                                    maxWidth: '100px',
+                                    maxHeight: '33px',
+                                    maxWidth: '33px',
                                     filter: 'invert(99%) sepia(2%) saturate(3676%) hue-rotate(249deg) brightness(117%) contrast(82%)'
                                 }
                             }

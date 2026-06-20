@@ -45,39 +45,40 @@ const terraTheme = createTheme({
             ].join(','),
         h1: {
             fontFamily: TERRA,
-            fontSize: '10pc',
+            fontSize: '3.3pc',
             fontWeight: 'bold',
+            lineHeight: 1,
             color: '#A66424'
         },
         h2: {
-            fontSize: '3.2pc',
+            fontSize: '1.1pc',
             fontWeight: 'bold',
             color: WHITE
         },
         minutes: {
             color: WHITE,
             fontFamily: CHARTER,
-            fontSize: '4pc'
+            fontSize: '1.57pc'
         },
         destination: {
             color: WHITE,
             fontFamily: CHARTER,
-            fontSize: '2.5pc'
+            fontSize: '0.97pc'
         },
         body1: {
             color: WHITE,
-            fontSize: '4pc'
+            fontSize: '1.3pc'
         },
         body2: {
             color: WHITE,
-            fontSize: '2.5pc'
+            fontSize: '0.8pc'
         }
     },
     components: {
         MuiCard: {
             styleOverrides: {
                 root: {
-                    borderRadius: '2.5pc'
+                    borderRadius: '0.8pc'
                 }
             },
         }

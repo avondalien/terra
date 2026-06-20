@@ -84,30 +84,30 @@ const Tracker = ({routes}: TrackerProps) => {
     const hour = milHour > 12 ? milHour - 12 : (milHour == 0 ? 12 : milHour)
     return (
         <>
-            <Stack 
-                spacing={2} 
-                justifyContent="space-between"
-                sx={{height: '95vh', maxHeight: '95vh'}}
+            <Stack
+                spacing={2}
+                // justifyContent="space-between"
+                sx={{height: '95vh', overflow: 'hidden'}}
             >
-                <Typography 
-                    variant="h1" 
+                <Typography
+                    variant="h1"
                     align="center"
-                    paddingTop={6} 
+                    sx={{ pb: 1, mb: 0 }}
                 >
                         Nearby Transit Times
                 </Typography>
-                <Stack paddingLeft={16}>
-                    <Stack spacing={4} justifyContent="flex-start">
+                <Stack paddingLeft={8} sx={{ minHeight: 0, overflow: 'hidden', mt: '-4px' }}>
+                    <Stack spacing={2} justifyContent="flex-start">
                         {
                             EL_STOPS.map(s => (
-                                <RouteTracker 
+                                <RouteTracker
                                     {...s}
                                     arrivals={routes.find(r => r.id === s.id)?.arrivals ?? []}
-                                    key={s.id} 
+                                    key={s.id}
                                 />))
                         }
                     </Stack>
-                    <Stack spacing={4} justifyContent="flex-start" paddingTop={8}>
+                    <Stack spacing={2} justifyContent="flex-start" paddingTop={1}>
                         {
                             BUS_STOPS.map(s => (
                                 <RouteTracker 
@@ -118,12 +118,14 @@ const Tracker = ({routes}: TrackerProps) => {
                         }
                     </Stack>
                 </Stack>?
-                <Stack 
-                    direction="row" 
+                <Stack
+                    direction="row"
                     justifyContent="space-between"
-                    alignItems="center"
-                    paddingLeft={16}
-                    paddingRight={16}
+                    alignItems="flex-end"
+                    paddingLeft={8}
+                    paddingRight={8}
+                    paddingBottom={2}
+                    sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: -1 }}
                 >
                     <Stack>
                         <Typography
@@ -139,7 +141,7 @@ const Tracker = ({routes}: TrackerProps) => {
                             Data provided by Chicago Transit Authority
                         </Typography>
                     </Stack>
-                    <div style={{width: '33pc'}}>
+                    <div style={{width: '44pc'}}>
                         <img 
                             src={terra} 
                             style={
