@@ -30,8 +30,8 @@ const RouteTracker = (props: RouteTrackerProps) => {
     const routeTitle = (routeNumber ? `${routeNumber} - ` : '') + routeName;
 
     return (
-        <Stack direction="row" spacing={4}>
-            <Card sx={{background: backgroundColor, width: '20%', display: 'flex', alignItems: 'center'}}>
+        <Stack direction="row" spacing={4} alignItems="stretch">
+            <Card sx={{background: backgroundColor, width: '20%', display: 'flex', alignItems: 'center', minHeight: '75px'}}>
                 <CardContent sx={{ padding: '8px', '&:last-child': { paddingBottom: '8px' }, width: '100%' }}>
                     <Stack
                         direction="row"

@@ -92,11 +92,11 @@ const Tracker = ({routes}: TrackerProps) => {
                 <Typography
                     variant="h1"
                     align="center"
-                    sx={{ pb: 1, mb: 0 }}
+                    sx={{ pt: 1, mb: 0 }}
                 >
                         Nearby Transit Times
                 </Typography>
-                <Stack paddingLeft={8} sx={{ minHeight: 0, overflow: 'hidden', mt: '-4px' }}>
+                <Stack spacing={1} paddingLeft={8} sx={{ minHeight: 0, overflow: 'hidden'}}>
                     <Stack spacing={2} justifyContent="flex-start">
                         {
                             EL_STOPS.map(s => (
