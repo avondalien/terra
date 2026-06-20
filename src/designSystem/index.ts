@@ -45,7 +45,7 @@ const terraTheme = createTheme({
             ].join(','),
         h1: {
             fontFamily: TERRA,
-            fontSize: '3.8pc',
+            fontSize: '4.0pc',
             fontWeight: 'bold',
             lineHeight: 1,
             color: '#A66424'
@@ -58,12 +58,12 @@ const terraTheme = createTheme({
         minutes: {
             color: WHITE,
             fontFamily: CHARTER,
-            fontSize: '1.75pc'
+            fontSize: '1.34pc'
         },
         destination: {
             color: WHITE,
             fontFamily: CHARTER,
-            fontSize: '1.23pc'
+            fontSize: '0.95pc'
         },
         body1: {
             color: WHITE,

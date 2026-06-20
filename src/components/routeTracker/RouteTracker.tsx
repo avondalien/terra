@@ -31,7 +31,7 @@ const RouteTracker = (props: RouteTrackerProps) => {
 
     return (
         <Stack direction="row" spacing={4} alignItems="stretch">
-            <Card sx={{background: backgroundColor, width: '20%', display: 'flex', alignItems: 'center', minHeight: '75px'}}>
+            <Card sx={{background: backgroundColor, width: '20%', display: 'flex', alignItems: 'center', minHeight: '60px'}}>
                 <CardContent sx={{ padding: '8px', '&:last-child': { paddingBottom: '8px' }, width: '100%' }}>
                     <Stack
                         direction="row"
