@@ -39,15 +39,9 @@ const RouteTracker = (props: RouteTrackerProps) => {
                         alignItems="center"
                         justifyContent="left"
                     >
-                        <img 
-                            src={icon} 
-                            style={
-                                {
-                                    maxHeight: '33px',
-                                    maxWidth: '33px',
-                                    filter: 'invert(99%) sepia(2%) saturate(3676%) hue-rotate(249deg) brightness(117%) contrast(82%)'
-                                }
-                            }
+                        <img
+                            src={icon}
+                            style={{ maxHeight: '33px', maxWidth: '33px' }}
                         />
                         <Stack 
                             alignSelf="center" 
