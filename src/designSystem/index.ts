@@ -71,7 +71,7 @@ const terraTheme = createTheme({
         },
         body2: {
             color: WHITE,
-            fontSize: '0.7pc'
+            fontSize: '0.9pc'
         }
     },
     components: {

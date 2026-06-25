@@ -125,13 +125,13 @@ const Tracker = ({routes}: TrackerProps) => {
                         position: 'fixed',
                         bottom: (theme) => theme.spacing(2),
                         right: (theme) => theme.spacing(8),
-                        width: '15pc',
+                        width: '18pc',
                         zIndex: -1
                     }}
                 >
                     <img
                         src={terra}
-                        style={{ width: "100%", filter: TERRA_FILTER }}
+                        style={{ width: "80%", filter: TERRA_FILTER }}
                     />
                     <Typography variant="h2" color={TERRA_COTTA}>
                         {`Time ${hour}:${('0' + minute).slice(-2)}`}
