@@ -85,7 +85,7 @@ const Tracker = ({routes}: TrackerProps) => {
     return (
         <>
             <Stack
-                spacing={2}
+                spacing={1}
                 // justifyContent="space-between"
                 sx={{height: '95vh', overflow: 'hidden'}}
             >
@@ -118,42 +118,29 @@ const Tracker = ({routes}: TrackerProps) => {
                         }
                     </Stack>
                 </Stack>
+                
                 <Stack
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="flex-end"
-                    paddingLeft={8}
-                    paddingRight={8}
-                    paddingBottom={2}
-                    sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: -1 }}
+                    alignItems="center"
+                    sx={{
+                        position: 'fixed',
+                        bottom: (theme) => theme.spacing(2),
+                        right: (theme) => theme.spacing(8),
+                        width: '15pc',
+                        zIndex: -1
+                    }}
                 >
-                    <Stack>
-                        <Typography
-                            variant="h2"
-                            color={TERRA_COTTA}
-                        >
-                            {`Time ${hour}:${('0' + minute).slice(-2)}`}
-                        </Typography>
-                        <Typography
-                            variant="body2"
-                            color={TERRA_COTTA}
-                        >
-                            Data provided by Chicago Transit Authority
-                        </Typography>
-                    </Stack>
-                    <div style={{width: '44pc'}}>
-                        <img 
-                            src={terra} 
-                            style={
-                                {
-                                    width: "33%", 
-                                    float: "right",
-                                    filter: TERRA_FILTER
-                                }
-                            }
-                        />
-                    </div>
+                    <img
+                        src={terra}
+                        style={{ width: "100%", filter: TERRA_FILTER }}
+                    />
+                    <Typography variant="h2" color={TERRA_COTTA}>
+                        {`Time ${hour}:${('0' + minute).slice(-2)}`}
+                    </Typography>
+                    <Typography variant="body2" color={TERRA_COTTA}>
+                        Data provided by Chicago Transit Authority
+                    </Typography>
                 </Stack>
+            
             </Stack>
         </>
     )

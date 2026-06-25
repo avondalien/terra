@@ -45,7 +45,7 @@ const terraTheme = createTheme({
             ].join(','),
         h1: {
             fontFamily: TERRA,
-            fontSize: '4.0pc',
+            fontSize: '3.5pc',
             fontWeight: 'bold',
             lineHeight: 1,
             color: '#A66424'
@@ -71,7 +71,7 @@ const terraTheme = createTheme({
         },
         body2: {
             color: WHITE,
-            fontSize: '0.8pc'
+            fontSize: '0.7pc'
         }
     },
     components: {
